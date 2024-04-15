@@ -18,6 +18,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos adicionales */
+        .carousel-item img {
+          height: 600px;
+          margin: auto; /* Para centrar las imágenes horizontalmente */
+          display: block; /* Para asegurarte de que se respeten los márgenes automáticos */
+        }
+      </style>
 </head>
 
 <body>
@@ -152,6 +161,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
    
 
+    <!-- Bootstrap JS y jQuery (Necesarios para el funcionamiento del carrusel) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
