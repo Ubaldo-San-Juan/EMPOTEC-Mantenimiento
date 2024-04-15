@@ -3,8 +3,6 @@
 {% block title %}Página de inicio - Empoderando{% endblock %}
 
 {% block content %}
-
-
 <div class="carousel-container">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
@@ -20,7 +18,7 @@
         <!-- Agrega más divs con la clase "carousel-item" y las imágenes correspondientes -->
       </div>
     </div>
-  </div>
+</div>
 <br />
 <div class="container">
   <h3>Cursos que te podrían interesar</h3>
@@ -81,44 +79,44 @@
 
 
 <script>
-  $(document).ready(function () {
-    console.log("BIENVENIDO A AJAX");
-  
-    $(".btnCardsIndex").click(function () {
-        var cursoId = $(this).data("id");
-  
-        $("#btnInscribirse").data("curso-id", cursoId);
-        console.log("mande ids");
-  
-        $.ajax({
-            url: "/ver_curso/" + cursoId,
-            type: "GET",
-            success: function (response) {
-                $("#modalCursoLabel").text(response.curso.titulo);
-                $("#imagenCurso").attr("src", "static/images/Cursos/" + response.curso.imagen);
-                $("#descripcionCurso").text(response.curso.descripcion);
-                $("#duracionCurso").text("Duración: " + response.curso.duracion + " horas");
-                $("#nivelCurso").text("Nivel: " + response.curso.nivel);
-  
-                console.log("Lecciones: ", response.lecciones);
-  
-                $("#listaLecciones").empty();
-                for (var i = 0; i < response.lecciones.length; i++) {
-                    var leccion = response.lecciones[i];
-                    var listItem = $("<li>").text(leccion.titulo + " - " + leccion.descripcion);
-                    $("#listaLecciones").append(listItem);
-                }
-  
-                $("#modalCurso").modal("show");
-            },
-            error: function (error) {
-                console.log("Error al obtener la información del curso:", error);
-            }
-        });
-    });
+$(document).ready(function () {
+  console.log("BIENVENIDO A AJAX");
+
+  $(".btnCardsIndex").click(function () {
+      var cursoId = $(this).data("id");
+
+      $("#btnInscribirse").data("curso-id", cursoId);
+      console.log("mande ids");
+
+      $.ajax({
+          url: "/ver_curso/" + cursoId,
+          type: "GET",
+          success: function (response) {
+              $("#modalCursoLabel").text(response.curso.titulo);
+              $("#imagenCurso").attr("src", "static/images/Cursos/" + response.curso.imagen);
+              $("#descripcionCurso").text(response.curso.descripcion);
+              $("#duracionCurso").text("Duración: " + response.curso.duracion + " horas");
+              $("#nivelCurso").text("Nivel: " + response.curso.nivel);
+
+              console.log("Lecciones: ", response.lecciones);
+
+              $("#listaLecciones").empty();
+              for (var i = 0; i < response.lecciones.length; i++) {
+                  var leccion = response.lecciones[i];
+                  var listItem = $("<li>").text(leccion.titulo + " - " + leccion.descripcion);
+                  $("#listaLecciones").append(listItem);
+              }
+
+              $("#modalCurso").modal("show");
+          },
+          error: function (error) {
+              console.log("Error al obtener la información del curso:", error);
+          }
+      });
   });
-  
-  
+});
+
+
 </script>
 
 
