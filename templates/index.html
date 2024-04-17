@@ -33,12 +33,12 @@
                   <p class="card-text">{{ curso.descripcion }}</p>
                   <span class="curso-id" style="display: none;">{{ curso.id }}</span> 
               </div>
-              <div class="card-footer">
-                  <button type="button" class=" btnCardsIndex" 
-                      data-id="{{ curso.id }}" 
-                      data-curso-id="{{ curso.id }}">
-                  Ver curso
-              </button>
+              <a href="http://127.0.0.1:5000/login">
+                <div class="card-footer">
+                    <button type="button" class=" btnCardsIndex">
+                    Ver curso
+                </button>  
+              </a>
               </div>
           </div>
       </div>
