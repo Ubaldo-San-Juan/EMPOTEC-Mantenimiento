@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from admin import AdminBackend
 from cursos import Usuario
 from models.db import Database
-
+from flask-sec import flasksecurity
 app = Flask(__name__)
 
 
